@@ -1,3 +1,11 @@
+const express = require('express');
+//would need to make this jsfile
+//const routes = require('./routes');
+//const server = require('./server');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
 let noteForm;
 let noteTitle;
 let noteText;
