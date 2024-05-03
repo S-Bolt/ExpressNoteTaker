@@ -1,10 +1,3 @@
-const express = require('express');
-//would need to make this jsfile
-//const routes = require('./routes');
-//const server = require('./server');
-
-const app = express();
-const PORT = process.env.PORT || 3000;
 
 let noteForm;
 let noteTitle;
@@ -13,7 +6,7 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
-if (window.location.pathname === '/notes') {
+if (window.location.pathname === './notes') {
   noteForm = document.querySelector('.note-form');
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
@@ -37,7 +30,7 @@ const hide = (elem) => {
 let activeNote = {};
 
 const getNotes = () =>
-  fetch('/api/notes', {
+  fetch('./api/notes', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
@@ -45,7 +38,7 @@ const getNotes = () =>
   });
 
 const saveNote = (note) =>
-  fetch('/api/notes', {
+  fetch('./api/notes', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -54,7 +47,7 @@ const saveNote = (note) =>
   });
 
 const deleteNote = (id) =>
-  fetch(`/api/notes/${id}`, {
+  fetch(`./api/notes/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json'
@@ -192,7 +185,7 @@ const renderNoteList = async (notes) => {
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
-if (window.location.pathname === '/notes') {
+if (window.location.pathname === './notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
   clearBtn.addEventListener('click', renderActiveNote);
