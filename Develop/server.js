@@ -1,6 +1,5 @@
 const express = require('express');
 const fs = require('fs');
-const { v4: uuidv4 } = require('uuid');
 const notesRoutes = require('./routes/notes')
 
 const PORT = 3001;
