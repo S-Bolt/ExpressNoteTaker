@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { readFromFile, readAndAppend } = require('../help/fsUtils.js');
+const { readFromFile, readAndAppend, writeToFile } = require('../help/fsUtils.js');
 const { v4: uuidv4 } = require('uuid');
 
 console.log(readFromFile);
@@ -37,7 +37,26 @@ router.post('/', (req, res) =>{
 
 //delete request to delete by id
 router.delete('/:id', (req, res) =>{
+    const noteId = req.params.id;
 
-})
+    //reading db.json
+    readFromFile('C:/Users/sambo/bootcamp/ExpressNoteTaker/Develop/db/db.json')
+    .then((data) => {
+        const notes = JSON.parse(data);
+        const updatedNotes = notes.filter((note) => note.id !== noteId);
+
+        if(notes.length === updatedNotes.length) {
+            console.err('Note not found');
+        }else {
+            writeToFile('C:/Users/sambo/bootcamp/ExpressNoteTaker/Develop/db/db.json', updatedNotes)
+            .then(() => {
+                console.log('Note deleted')
+            })
+            .catch((err) =>{
+                console.err('Error deleting note')
+            })
+        };
+    });
+});
 
 module.exports = router;
