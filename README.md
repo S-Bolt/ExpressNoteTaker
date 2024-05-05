@@ -9,6 +9,13 @@
     -View notes
     -Delete notes (feature in development)
 
+## Installation
+    -Clone this repository inot your local machine.
+    -Navigate to project directory.
+    -Run "npm install" to install dependencies.
+    -Start server by running "node server.js"
+    -Check out the application by going to "http://localhost.3001" in your web browser
+
 ## Usage
     -To create a new note, click the "New Note" button and fill in the title and content fields.  Then click "Save"
     -To view existing notes, view the left side of the notes.html page
