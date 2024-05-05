@@ -6,8 +6,8 @@ console.log(readFromFile);
 
 //get route to fetch notes
 router.get('/', (req, res) => {
-    //had to change to abloslute filepath.  Unsure why it wouldnt' work before?
-    readFromFile('C:/Users/sambo/bootcamp/ExpressNoteTaker/Develop/db/db.json')
+    //had to change to abloslute filepath.  Unsure why it wouldnt' work before?//then had to change to new configuration
+    readFromFile(__dirname + '/../db/db.json')
     .then((data) => res.json(JSON.parse(data)))
     .catch((err) => {
         console.error('Error reading file', err);
@@ -29,8 +29,8 @@ router.post('/', (req, res) =>{
             text
         };
 
-         readAndAppend(newNote, 'C:/Users/sambo/bootcamp/ExpressNoteTaker/Develop/db/db.json')
-            res.json('Note aded successfully')   
+         readAndAppend(newNote,__dirname + '/../db/db.json')
+            res.json('Note added successfully')   
             
     } else {
         console.err('Error ading note', err)

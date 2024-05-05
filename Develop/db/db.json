@@ -27,5 +27,10 @@
         "id": "ffec2b86-6b77-467d-83e6-4c1a1960189d",
         "title": "Do a Lap",
         "text": "pool or track\n"
+    },
+    {
+        "id": "88964dae-dc8e-453f-a933-cc1ca3fac2a7",
+        "title": "Your note title",
+        "text": "Your note text"
     }
 ]
