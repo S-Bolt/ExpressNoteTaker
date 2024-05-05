@@ -3,7 +3,7 @@ const fs = require('fs');
 const notesRoutes = require('./routes/notes')
 
 
-const PORT = 3001;
+const PORT = process.env.port || 3001;
 
 const app = express();
 
