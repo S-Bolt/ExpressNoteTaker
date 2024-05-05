@@ -17,6 +17,10 @@ router.get('/', (req, res) => {
 //post request to add new note
 router.post('/', (req, res) =>{
     const { title, text } = req.body;
+//Are tile and text provided?
+    if (!title || !text) {
+        console.error('Title and text are required')
+    }
 
     if (title && text) {
         const newNote = {
@@ -25,38 +29,12 @@ router.post('/', (req, res) =>{
             text
         };
 
-        readAndAppend(newNote, 'C:/Users/sambo/bootcamp/ExpressNoteTaker/Develop/db/db.json')
-            .then(() =>{
-                res.json('Note aded successfully');
-            })
-            .catch((err) => {
-                console.err('Error ading note', err)
-            })
-    }
+         readAndAppend(newNote, 'C:/Users/sambo/bootcamp/ExpressNoteTaker/Develop/db/db.json')
+            res.json('Note aded successfully')   
+            
+    } else {
+        console.err('Error ading note', err)
+       } 
 })
-
-//delete request to delete by id
-router.delete('/:id', (req, res) =>{
-    const noteId = req.params.id;
-
-    //reading db.json
-    readFromFile('C:/Users/sambo/bootcamp/ExpressNoteTaker/Develop/db/db.json')
-    .then((data) => {
-        const notes = JSON.parse(data);
-        const updatedNotes = notes.filter((note) => note.id !== noteId);
-
-        if(notes.length === updatedNotes.length) {
-            console.err('Note not found');
-        }else {
-            writeToFile('C:/Users/sambo/bootcamp/ExpressNoteTaker/Develop/db/db.json', updatedNotes)
-            .then(() => {
-                console.log('Note deleted')
-            })
-            .catch((err) =>{
-                console.err('Error deleting note')
-            })
-        };
-    });
-});
 
 module.exports = router;

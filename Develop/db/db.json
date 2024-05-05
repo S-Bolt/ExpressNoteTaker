@@ -4,38 +4,28 @@
         "text": "Test text"
     },
     {
-        "id": "cd413c8d-346a-45d2-9da1-112e20da5821",
-        "title": "Your note title",
-        "text": "Your note text"
+        "id": "ceb93d35-28e8-4987-9b11-d5db9cf04652",
+        "title": "Set the table",
+        "text": "For dinner"
     },
     {
-        "id": "09cc059b-f010-4690-9751-a0a5cdf2c24b",
-        "title": "Your note title",
-        "text": "Your note text"
+        "id": "54c1b73f-e469-4ec8-9b7e-1b448bb29e41",
+        "title": "Go for a run",
+        "text": "At noon\n"
     },
     {
-        "id": "af3cc4a7-d8b6-4d17-b917-f0655e363096",
-        "title": "Your note title",
-        "text": "Your note text"
+        "id": "11e81734-1b40-4c7d-bdcb-2d2a9e155256",
+        "title": "Buy dog food",
+        "text": "On Monday"
     },
     {
-        "id": "5feb0440-530e-4fd1-b6f3-8e37aa391a63",
-        "title": "Your note title",
-        "text": "Your note text"
+        "id": "d4347b7a-da8b-4a78-b769-434fb251ebe6",
+        "title": "Fix the error",
+        "text": "You dummy lol!\n"
     },
     {
-        "id": "e3aedf5d-f2a9-4b2f-a13e-ac9b580f79eb",
-        "title": "Get the project",
-        "text": "You did it"
-    },
-    {
-        "id": "0ccde5cc-1708-4810-8530-3783328fd7b6",
-        "title": "Walk  the dog",
-        "text": "Noon"
-    },
-    {
-        "id": "9d00e6c3-5f6c-4e21-abe3-0d0d4a4e5cb4",
-        "title": "Cook Dinner",
-        "text": "6pm"
+        "id": "ffec2b86-6b77-467d-83e6-4c1a1960189d",
+        "title": "Do a Lap",
+        "text": "pool or track\n"
     }
 ]
